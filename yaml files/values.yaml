@@ -1,0 +1,34 @@
+cluster:
+  service:
+    type: "NodePort"
+  networking:
+    incomingCIDR: ["0.0.0.0/0"]
+    ingressGatewayIP: "" # insert IP Adress of Server
+    ipFamilies: "IPv4"
+  container:
+    engine: "containerd"
+
+ingress:
+  ingressClassName: "nginx"
+
+global:
+  domain: "" # domain.tld
+
+persistence:
+  storageClassName:
+    RWO: "nfs-client"
+  size:
+    postgresql: 10Gi
+    mariadb: 10Gi
+    minio: 10Gi
+
+apps:
+  dkimpy:
+    enabled: true
+
+smtp:
+  dkim:
+    key:
+      value: "" # Insert private key for dkim
+    selector: "default"
+    useED25519: true

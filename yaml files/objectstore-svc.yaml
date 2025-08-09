@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: objectstore
+  namespace: odesk
+spec:
+  type: ClusterIP
+  ports:
+    - port: 443
+      targetPort: 9000
+  selector:
+    app: minio

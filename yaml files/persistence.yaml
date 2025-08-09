@@ -1,0 +1,60 @@
+# SPDX-FileCopyrightText: 2023 Bundesministerium des Innern und für Heimat, PG ZenDiS "Projektgruppe für Aufbau ZenDiS"
+# SPDX-License-Identifier: Apache-2.0
+---
+persistence:
+  # Will be used as default if not otherwise define on the component level
+  storageClassNames:
+    RWX: ""
+    RWO: ""
+
+  storages:
+    cassandra:
+      size: "1Gi"
+      commitLogsize: "256Mi"
+      storageClassName: ~
+    clamav:
+      size: "1Gi"
+      storageClassName: ~
+    dovecot:
+      size: "10Gi"
+      storageClassName: ~
+    mariadb:
+      size: "10Gi"
+      storageClassName: ~
+    matrixNeoDateFixBot:
+      size: "1Gi"
+      storageClassName: ~
+    minio:
+      size: "20Gi"
+      storageClassName: ~
+    nubusLdapServerData:
+      size: "1Gi"
+      storageClassName: ~
+    nubusPortalConsumer:
+      size: "1Gi"
+      storageClassName: ~
+    nubusProvisioningNats:
+      size: "1Gi"
+      storageClassName: ~
+    oxConnector:
+      size: "1Gi"
+      storageClassName: ~
+    postfix:
+      size: "1Gi"
+      storageClassName: ~
+    postgresql:
+      size: "10Gi"
+      storageClassName: ~
+    prosody:
+      size: "1Gi"
+      storageClassName: ~
+    redis:
+      size: "10Gi"
+      storageClassName: ~
+    synapse:
+      size: "1Gi"
+      storageClassName: ~
+    xwiki:
+      size: "10Gi"
+      storageClassName: ~
+...
